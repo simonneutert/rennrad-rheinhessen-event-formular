@@ -23,7 +23,7 @@ class DynamicFormText {
       result += "\n\n";
     }
     result += `${distance} mit ${elevation} und ${tempo}`;
-    result += `${profile} ${surface}`;
+    result += ` ${profile} ${surface}`;
     result += "\n\n";
 
     result += `${stopsWhilst}`;
