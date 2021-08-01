@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    networks:
+      - web
+      - default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.http.routers.rrrform_website.entrypoints=web"
+      - "traefik.http.routers.rrrform_website.rule=Host(`event-formular.rennrad-rheinhessen.de`)"
+      - "traefik.http.routers.rrrform_website.middlewares=https_redirect"
+      - "traefik.http.middlewares.https_redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.rrrform_website_https.entrypoints=websecure"
+      - "traefik.http.routers.rrrform_website_https.tls.certresolver=myhttpchallenge"
+      - "traefik.http.routers.rrrform_website_https.rule=Host(`event-formular.rennrad-rheinhessen.de`)"
+      - "traefik.http.services.rrrform_website.loadbalancer.server.port=80"
+      # - "traefik.http.services.rrrform_website.loadbalancer.server.port=443"
+
+networks:
+  web:
+    external: true

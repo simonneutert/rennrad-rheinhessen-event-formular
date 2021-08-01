@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/forms.js"></script>
+    <style>
+      .app {
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="app container">
+      <h2>Rennrad Rheinhessen Event Textbaustein App</h2>
+      <h5>
+        Hier kannst du ganz einfach deinen Text für die Ausfahrt erstellen
+        lassen. Bitte fülle alle Felder aus, dann wird der Text erstellt. Diesen
+        dann einfach in die Beschreibung des Strava Events kopieren.
+      </h5>
+
+      <hr />
+
+      <p><strong>Tipps für Guides:</strong></p>
+
+      <ul>
+        <li>Sprecht bei jedem Startpunkt die Gruppe an</li>
+        <li>
+          wenn sich die Leistungen oder Wünsche nicht in einer Gruppe sammeln
+          lassen, ernennt einen "Freiwilligen" oder besser gleich 2 und trennt
+          die Gruppen auf
+        </li>
+        <li>
+          geht mit den Schätzungen etwas zu hoch, es soll niemand abgehängt
+          werden, weil "ihr es eigentlich gut gemeint habt" - Gruppen tendieren
+          dazu schneller zu werden oder hitzig zu starten, weil die Beine frisch
+          sind
+        </li>
+      </ul>
+
+      <hr />
+
+      <form id="rrform" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="introduction" class="form-label">Einleitung / Idee</label>
+          <textarea
+            name="introduction"
+            class="form-control"
+            id="introduction"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="stopsWhilst" class="form-label"
+            >Zwischenstopps (vor Abschluss der Tour)</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="stopsWhilst"
+            value="0"
+            aria-describedby="stopsWhilstHelp"
+          />
+          <div id="stopsWhilstHelp" class="form-text">
+            Bitte wähle hier die mindestens geplanten Stopps (z.B. Kaffeepause,
+            Tankstelle etc.)!
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="distance" class="form-label">Distanz</label>
+          <input
+            type="number"
+            class="form-control"
+            id="distance"
+            value="45"
+            aria-describedby="distanceHelp"
+          />
+          <div id="distanceHelp" class="form-text">
+            Bitte wähle hier die (ungefähre) Distanz
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="tempo" class="form-label">Tempo (mindestens)</label>
+          <input
+            type="number"
+            class="form-control"
+            id="tempo"
+            value="25"
+            aria-describedby="tempoHelp"
+          />
+          <div id="tempoHelp" class="form-text">
+            Bitte wähle hier den mindestens erreichten Schnitt!
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="elevation" class="form-label"
+            >Höhenmeter (erwartet/mindestens)</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="elevation"
+            value="250"
+            aria-describedby="elevationHelp"
+          />
+          <div id="elevationHelp" class="form-text">
+            Bitte wähle hier die mindest erwarteten Höhenmeter!
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <select
+            id="profile"
+            class="form-select"
+            aria-label="Höhenprofil"
+            required
+          >
+            <option selected disabled value="">
+              Wähle das erwartete Profil der Tour
+            </option>
+            <option value="flat">überwiegend flach</option>
+            <option value="hilly">etwa 100 Hm je 10 km</option>
+            <option value="mountain">
+              überwiegend bergauf oder viele steile Abschnitte
+            </option>
+          </select>
+          <div class="invalid-feedback">Bitte wähle das Höhenprofil</div>
+        </div>
+
+        <div class="mb-3">
+          <select
+            id="surface"
+            class="form-select"
+            aria-label="Wegbeschaffenheit"
+            required
+          >
+            <option selected disabled value="">
+              Wähle die Wegbeschaffenheit
+            </option>
+            <option value="road">überwiegend Straße</option>
+            <option value="cyclepath">
+              asphaltierte Fahrradwege und Straße, wenn nötig
+            </option>
+            <option value="mixed">
+              asphaltierte Feldwege, asphaltierte Fahrradwege und etwas Straße
+            </option>
+            <option value="gravel">überwiegend Feld- und Waldwege</option>
+          </select>
+          <div class="invalid-feedback">Bitte wähle die Wegbeschaffenheit</div>
+        </div>
+
+        <div class="form-check mb-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="stopFinished"
+          />
+          <label class="form-check-label" for="stopFinished">
+            Gemeinsamer Abschluss mit Essen/Getränk?
+          </label>
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="alwaysEasy" />
+          <label class="form-check-label" for="alwaysEasy"
+            >Gruppe verpflichtet sich stets und uneingeschränkt am langsamsten
+            Mitglied zu richten?</label
+          >
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="ethics" checked />
+          <label class="form-check-label" for="ethics"
+            >Standardhinweise Gruppenfahrt einbinden?</label
+          >
+        </div>
+
+        <div class="mb-3">
+          <label for="urlGps" class="form-label">URL zur Route</label>
+          <input
+            type="text"
+            class="form-control"
+            id="urlGps"
+            value=""
+            aria-describedby="urlGpsHelp"
+          />
+          <div id="urlGpsHelp" class="form-text">
+            Bitte hier den Link zur Route!
+          </div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">
+            Erstelle/Update Text
+          </button>
+        </div>
+      </form>
+
+      <hr />
+
+      <h2>Vorformatiertes Ergebnis</h2>
+
+      <form>
+        <div class="mb-3">
+          <label for="result" class="form-label">Ergebnis</label>
+          <textarea
+            id="result"
+            class="form-control"
+            id="result"
+            rows="24"
+          ></textarea>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              } else {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const formData = {};
+                const introduction =
+                  document.getElementById("introduction").value;
+                const stopsWhilst = parseInt(
+                  document.getElementById("stopsWhilst").value
+                );
+                const distance = parseInt(
+                  document.getElementById("distance").value
+                );
+                const tempo = parseInt(document.getElementById("tempo").value);
+                const elevation = parseInt(
+                  document.getElementById("elevation").value
+                );
+                const profile = document.getElementById("profile").value;
+
+                const surface = document.getElementById("surface").value;
+                const stopFinished =
+                  document.getElementById("stopFinished").checked;
+
+                const ethics = document.getElementById("ethics").checked;
+                const urlGps = document.getElementById("urlGps").value;
+
+                formData.introduction = introduction;
+                formData.stopsWhilst = stopsWhilst;
+                formData.distance = distance;
+                formData.tempo = tempo;
+                formData.elevation = elevation;
+                formData.profile = profile;
+                formData.surface = surface;
+                formData.stopFinished = stopFinished;
+                formData.alwaysEasy = alwaysEasy;
+                formData.ethics = ethics;
+                formData.urlGps = urlGps;
+
+                console.log(formData);
+                const c = new DynamicFormText(formData);
+                document.getElementById("result").value = c.serialize();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
