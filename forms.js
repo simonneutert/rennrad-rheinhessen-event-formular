@@ -144,7 +144,13 @@ class DynamicFormText {
 
   ethics(bool) {
     if (bool) {
-      return `Allgemeines: Gruppenausfahrt bedeutet wie immer, dass wir gemeinsam im Flachen unterwegs sind. Am Berg kann jeder sein eigenes Tempo wählen und oben wird gewartet, bis die Gruppe wieder vollständig ist, um dann wieder von vorne zu beginnen. Lasst bitte "langsamere" Fahrer nicht alleine und ermutigt/begleitet diese auf der Fahrt. In beiden Gruppen wird auf zurückgefallene gewartet. Nehmt auch auf alle Anderen Rücksicht. STVO, Corona, Anstand, etc.`;
+      let text = "";
+      text +=
+        'Allgemeines: Gruppenausfahrt bedeutet wie immer, dass wir gemeinsam im Flachen unterwegs sind. Am Berg kann jeder sein eigenes Tempo wählen und oben wird gewartet, bis die Gruppe wieder vollständig ist, um dann wieder von vorne zu beginnen. Lasst bitte "langsamere" Fahrer nicht alleine und ermutigt/begleitet diese auf der Fahrt. In beiden Gruppen wird auf zurückgefallene gewartet. Nehmt auch auf alle Anderen Rücksicht. STVO, Corona, Anstand, etc.';
+      text += "\n\n";
+      text +=
+        "An die, die kämpfen oder drohen aus der Gruppe zu fallen sei auch ein Wort gerichtet: Bitte sprecht mit den Guides und Mitfahrern, sie werden euch helfen im Zweifel eine kleine eigene Gruppe zu finden, damit niemand über- oder unterfordert ist.";
+      return text;
     } else {
       return "";
     }
