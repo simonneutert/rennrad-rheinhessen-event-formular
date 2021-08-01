@@ -61,7 +61,7 @@ class DynamicFormText {
   }
 
   tempo(number) {
-    return `angedacht sind ${number} km/h (in Gruppen tendiert es aber erfahrungsgemäß zu 2 km/h mehr).`;
+    return `angedacht sind ${number} km/h (in Gruppen tendiert es aber erfahrungsgemäß zu ${number} +2 km/h mehr).`;
   }
 
   elevation(number) {
