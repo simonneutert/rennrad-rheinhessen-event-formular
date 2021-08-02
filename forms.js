@@ -73,7 +73,7 @@ class DynamicFormText {
       case 0:
         return `Geplant sind ${number} Stopps an Tanken/Bäckereien/Eisdielen/etc.`;
       case 1:
-        return `Geplant sind mindestens ${number} Tanken/Bäckereien/Eisdielen/etc.`;
+        return `Geplant sind mindestens ${number} Stopp an Tanken/Bäckereien/Eisdielen/etc.`;
       default:
         return `Geplant sind mindestens ${number} Stopps an Tanken/Bäckereien/Eisdielen/etc.`;
     }
