@@ -71,7 +71,7 @@ class DynamicFormText {
   stopsWhilst(number) {
     switch (parseInt(number)) {
       case 0:
-        return `Geplant sind ${number} Stopps an Tanken/Bäckereien/Eisdielen/etc.`;
+        return `Es sind keine Stopps an Tanken/Bäckereien/Eisdielen/etc. geplant.`;
       case 1:
         return `Geplant sind mindestens ${number} Stopp an Tanken/Bäckereien/Eisdielen/etc.`;
       default:
