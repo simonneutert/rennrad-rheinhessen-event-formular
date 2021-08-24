@@ -149,7 +149,7 @@ class DynamicFormText {
         'Allgemeines: Keine angemeldete und geführte Tour, durch die Organisation der Tour entsteht lediglich ein gemeinsamer Rahmen, um auf jeweils eigenes Risiko gemeinsam Sport zu machen. Gruppenausfahrt bedeutet wie immer, dass wir gemeinsam im Flachen unterwegs sind. Am Berg kann jeder sein eigenes Tempo wählen und oben wird gewartet, bis die Gruppe wieder vollständig ist, um dann wieder von vorne zu beginnen. Lasst bitte "langsamere" Fahrer*innen nicht alleine und ermutigt/begleitet diese auf der Fahrt. In jeder Gruppe wird auf Zurückgefallene gewartet, wenn es nicht zuvor ausdrücklich anders vereinbart wurde. Nehmt auch auf alle Anderen Rücksicht. STVO, Corona, Anstand, etc.';
       text += "\n\n";
       text +=
-        "An die, die kämpfen oder drohen aus der Gruppe zu fallen, sei auch ein Wort gerichtet: Bitte sprecht mit den Guides und Mitfahrer*innen, sie werden euch helfen im Zweifel eine kleine eigene Gruppe zu finden, damit niemand über- oder unterfordert ist.";
+        "An die, die kämpfen um dranzubleiben und/oder drohen aus der Gruppe zu fallen, sei auch ein Wort gerichtet: Bitte sprecht mit den Guides und Mitfahrer*innen, sie werden euch helfen im Zweifel eine kleine eigene Gruppe zu finden, damit niemand über- oder unterfordert ist.";
       return text;
     } else {
       return "";
