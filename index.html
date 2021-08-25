@@ -165,7 +165,7 @@
                   Wähle die Wegbeschaffenheit
                 </option>
                 <option value="road">überwiegend Straße</option>
-                <option value="cyclepath">
+                <option value="cyclepaths">
                   asphaltierte Fahrradwege und Straße, wenn nötig
                 </option>
                 <option value="mixed">
@@ -177,6 +177,18 @@
               <div class="invalid-feedback">
                 Bitte wähle die Wegbeschaffenheit
               </div>
+            </div>
+
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="bringLights"
+              />
+              <label class="form-check-label" for="bringLights">
+                Sind Lichter notwendig?
+              </label>
             </div>
 
             <div class="form-check mb-3">
@@ -324,6 +336,9 @@
                 const stopFinished =
                   document.getElementById("stopFinished").checked;
 
+                const bringLights =
+                  document.getElementById("bringLights").checked;
+
                 const alwaysEasy =
                   document.getElementById("alwaysEasy").checked;
                 const ethics = document.getElementById("ethics").checked;
@@ -337,6 +352,7 @@
                 formData.profile = profile;
                 formData.surface = surface;
                 formData.stopFinished = stopFinished;
+                formData.bringLights = bringLights;
                 formData.alwaysEasy = alwaysEasy;
                 formData.ethics = ethics;
                 formData.urlGps = urlGps;

@@ -15,6 +15,7 @@ class DynamicFormText {
     const urlGps = this.urlGps(this.form.urlGps);
     const ethics = this.ethics(this.form.ethics);
     const alwaysEasy = this.alwaysEasy(this.form.alwaysEasy);
+    const bringLights = this.bringLights(this.form.bringLights);
 
     let result = "";
     console.log(introduction);
@@ -25,6 +26,11 @@ class DynamicFormText {
     result += `${distance} mit ${elevation} und ${tempo}`;
     result += ` ${profile} ${surface}`;
     result += "\n\n";
+
+    if (bringLights.length) {
+      result += `${bringLights}`;
+      result += "\n\n";
+    }
 
     result += `${stopsWhilst}`;
     if (stopsFinished.length) result += ` ${stopsFinished}`;
@@ -81,7 +87,15 @@ class DynamicFormText {
 
   stopFinished(bool) {
     if (bool) {
-      return `Wer will kann am Ende mit der Gruppe gemeinsam etwas trinken/essen.`;
+      return "Wer will kann am Ende mit der Gruppe gemeinsam etwas trinken/essen.";
+    } else {
+      return "";
+    }
+  }
+
+  bringLights(bool) {
+    if (bool) {
+      return "Bitte bringt Lichter mit!";
     } else {
       return "";
     }
@@ -93,7 +107,7 @@ class DynamicFormText {
       case "road":
         text = `Gefahren wird haupstächlich Straße.`;
         break;
-      case "cylepaths":
+      case "cyclepaths":
         text = `Gefahren werden asphaltierte Fahrradwege und Straße wenn nötig.`;
         break;
       case "mixed":
