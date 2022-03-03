@@ -83,67 +83,69 @@
               ></textarea>
             </div>
 
-            <div class="mb-3">
-              <label for="stopsWhilst" class="form-label"
-                >Zwischenstopps (vor Abschluss der Tour)</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                id="stopsWhilst"
-                value="0"
-                aria-describedby="stopsWhilstHelp"
-              />
-              <div id="stopsWhilstHelp" class="form-text">
-                Bitte wähle hier die mindestens geplanten Stopps (z.B.
-                Kaffeepause, Tankstelle etc.)!
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                <label for="distance" class="form-label">Distanz</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="distance"
+                  value="45"
+                  min="0"
+                  aria-describedby="distanceHelp"
+                />
+                <div id="distanceHelp" class="form-text">
+                  Bitte wähle hier die (ungefähre) Distanz
+                </div>
+              </div>
+              <div class="mb-3 col-md-6">
+                <label for="tempo" class="form-label">Tempo (mindestens)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="tempo"
+                  value="25"
+                  min="0"
+                  aria-describedby="tempoHelp"
+                />
+                <div id="tempoHelp" class="form-text">
+                  Bitte wähle hier den mindestens erreichten Schnitt!
+                </div>
               </div>
             </div>
 
-            <div class="mb-3">
-              <label for="distance" class="form-label">Distanz</label>
-              <input
-                type="number"
-                class="form-control"
-                id="distance"
-                value="45"
-                min="0"
-                aria-describedby="distanceHelp"
-              />
-              <div id="distanceHelp" class="form-text">
-                Bitte wähle hier die (ungefähre) Distanz
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                <label for="elevation" class="form-label"
+                  >Höhenmeter (erwartet/mindestens)
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="elevation"
+                  value="250"
+                  min="100"
+                  aria-describedby="elevationHelp"
+                />
+                <div id="elevationHelp" class="form-text">
+                  Bitte wähle hier die mindest erwarteten Höhenmeter!
+                </div>
               </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="tempo" class="form-label">Tempo (mindestens)</label>
-              <input
-                type="number"
-                class="form-control"
-                id="tempo"
-                value="25"
-                min="0"
-                aria-describedby="tempoHelp"
-              />
-              <div id="tempoHelp" class="form-text">
-                Bitte wähle hier den mindestens erreichten Schnitt!
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <label for="elevation" class="form-label"
-                >Höhenmeter (erwartet/mindestens)</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                id="elevation"
-                value="250"
-                min="100"
-                aria-describedby="elevationHelp"
-              />
-              <div id="elevationHelp" class="form-text">
-                Bitte wähle hier die mindest erwarteten Höhenmeter!
+              <div class="mb-3 col-md-6">
+                <label for="stopsWhilst" class="form-label"
+                  >Zwischenstopps (vor Abschluss der Tour)
+                </label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="stopsWhilst"
+                  value="0"
+                  aria-describedby="stopsWhilstHelp"
+                />
+                <div id="stopsWhilstHelp" class="form-text">
+                  Bitte wähle hier die mindestens geplanten Stopps (z.B.
+                  Kaffeepause, Tankstelle etc.)!
+                </div>
               </div>
             </div>
 
@@ -236,7 +238,15 @@
             </div>
 
             <div class="mb-3">
-              <label for="urlGps" class="form-label">URL zur Route</label>
+              <label for="urlGps" class="form-label"
+                >URL zur Route (bevorzugt
+                <a
+                  href="https://www.komoot.de/user/2112666854409"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >komoot</a
+                >)
+              </label>
               <input
                 type="text"
                 class="form-control"
