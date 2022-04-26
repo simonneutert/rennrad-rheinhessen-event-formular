@@ -23,7 +23,7 @@ class DynamicFormText {
       result += introduction;
       result += "\n\n";
     }
-    result += `${distance} mit ${elevation} und ${tempo}`;
+    result += `${distance}, bei ca. ${elevation} angesetzt. ${tempo}`;
     result += ` ${profile} ${surface}`;
     result += "\n\n";
 
@@ -63,11 +63,11 @@ class DynamicFormText {
   }
 
   distance(number) {
-    return `Die Fahrt ist mit ${number} km angesetzt`;
+    return `Die Fahrt ist mit ${number} km`;
   }
 
   tempo(number) {
-    return `angedacht sind ${number} km/h (in Gruppen tendiert es aber erfahrungsgemäß zu ${number} +2 km/h mehr).`;
+    return `Geplant sind etwa ${number} km/h (in Gruppen tendiert es aber erfahrungsgemäß zu +2 km/h mehr).`;
   }
 
   elevation(number) {
