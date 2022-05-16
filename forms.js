@@ -105,7 +105,7 @@ class DynamicFormText {
     let text;
     switch (str) {
       case "road":
-        text = `Gefahren wird haupstächlich Straße.`;
+        text = `Gefahren wird hauptsächlich Straße.`;
         break;
       case "cyclepaths":
         text = `Gefahren werden asphaltierte Fahrradwege und Straße wenn nötig.`;
