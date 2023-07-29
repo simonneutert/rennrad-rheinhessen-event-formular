@@ -25,7 +25,6 @@ jobs:
           # Name of the package.
           # Required
           package-name: rennrad-rheinhessen-event-formular 
-
           # Type of the package. Can be one of container, maven, npm, nuget, or rubygems.
           # Required
           package-type: container
